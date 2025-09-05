@@ -1,0 +1,16 @@
+{
+  "restaurants": [
+    {
+      "id": "1757061204476",
+      "slug": "liiti-chokha",
+      "name": "liiti chokha",
+      "owner": "diwakar",
+      "email": "admin@gmail.com",
+      "phone": "02345678654",
+      "address": "pakri",
+      "city": "gaya",
+      "cuisine": "enjjw",
+      "website": "http://localhost:5173/register-restaurant"
+    }
+  ]
+}

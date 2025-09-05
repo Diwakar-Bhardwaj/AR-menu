@@ -1,0 +1,18 @@
+{
+  "name": "ar-menu-backend",
+  "version": "1.0.0",
+  "description": "Backend for AR Menu prototype: QR generation service",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "qrcode": "^1.5.4"
+  }
+}
+
+
