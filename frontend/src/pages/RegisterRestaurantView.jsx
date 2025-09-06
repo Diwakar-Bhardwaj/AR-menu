@@ -56,3 +56,9 @@ const RegisterRestaurantView = () => {
 export default RegisterRestaurantView;
 
 
+
+
+
+
+
+

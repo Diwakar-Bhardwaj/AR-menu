@@ -1,0 +1,11 @@
+{
+  "_doNotTranslate": ["menu.pizza", "menu.burger", "menu.mangoShake"],
+  "welcome": "Welcome to our restaurant!",
+  "order": "Order now",
+  "price": "Price",
+  "review": "Leave a review",
+  "contact": "Contact us",
+  "menu.pizza": "Pizza",
+  "menu.burger": "Burger",
+  "menu.mangoShake": "Mango Shake"
+}

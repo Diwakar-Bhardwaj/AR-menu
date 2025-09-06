@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <LanguageSwitcher />
       <div className="mt-8 text-center">
         <div className="flex flex-wrap justify-center gap-4">
           <button
@@ -43,6 +45,12 @@ const Footer = () => {
             onClick={() => navigate('/orders')}
           >
             Customer Orders
+          </button>
+          <button
+            className="text-orange-400 font-bold underline hover:text-orange-300 transition text-lg"
+            onClick={() => navigate('/login-restaurant')}
+          >
+            Restaurant Login
           </button>
           <button
             className="text-orange-400 font-bold underline hover:text-orange-300 transition text-lg"

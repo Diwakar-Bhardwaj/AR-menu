@@ -84,3 +84,4 @@ const QrModal = ({ isOpen, onClose }) => {
 export default QrModal;
 
 
+

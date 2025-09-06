@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import MenuItemCard from '../components/ui/MenuItemCard';
 import OrderModal from '../components/ui/OrderModal';
+import MenuSearch from '../components/ui/MenuSearch';
 import { useApp } from '../context/AppContext';
 import { getOrderCounts, sortMenuByOrders } from '../utils/menuUtils';
 
@@ -12,6 +13,7 @@ const HomePage = () => {
   const { menu, orders, addOrder } = useApp();
   const [orderModal, setOrderModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [search, setSearch] = useState("");
 
   // Get order counts and sort menu
   const orderCounts = getOrderCounts(orders);
@@ -43,15 +45,32 @@ const HomePage = () => {
         <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-10 font-serif text-orange-600 tracking-tight drop-shadow-lg">
           Our Menu
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {sortedMenu.map((item, idx) => (
-            <MenuItemCard
-              key={idx}
-              item={item}
-              onOrder={openOrderModal}
-              onViewDetails={viewItemDetails}
-            />
-          ))}
+        <MenuSearch
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          placeholder="Search menu..."
+        />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-4">
+          {sortedMenu.filter(item =>
+            item.name.toLowerCase().includes(search.toLowerCase()) ||
+            item.price.toLowerCase().includes(search.toLowerCase()) ||
+            item.review.toLowerCase().includes(search.toLowerCase())
+          ).length === 0 ? (
+            <div className="col-span-full text-center text-gray-400">No menu items found.</div>
+          ) : (
+            sortedMenu.filter(item =>
+              item.name.toLowerCase().includes(search.toLowerCase()) ||
+              item.price.toLowerCase().includes(search.toLowerCase()) ||
+              item.review.toLowerCase().includes(search.toLowerCase())
+            ).map((item, idx) => (
+              <MenuItemCard
+                key={idx}
+                item={item}
+                onOrder={openOrderModal}
+                onViewDetails={viewItemDetails}
+              />
+            ))
+          )}
         </div>
       </main>
       <Footer />

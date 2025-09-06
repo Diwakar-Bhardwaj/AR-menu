@@ -11,8 +11,7 @@ const RegisterRestaurant = () => {
     phone: '',
     address: '',
     city: '',
-    cuisine: '',
-    website: '',
+    cuisine: ''
   });
 
   const handleChange = (e) => {
@@ -77,10 +76,6 @@ const RegisterRestaurant = () => {
               <label className="block text-gray-700 mb-1">Cuisine</label>
               <input name="cuisine" value={form.cuisine} onChange={handleChange} required className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-300 outline-none" />
             </div>
-          </div>
-          <div>
-            <label className="block text-gray-700 mb-1">Website</label>
-            <input type="url" name="website" value={form.website} onChange={handleChange} className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-300 outline-none" />
           </div>
           <button type="submit" className="bg-green-500 text-white font-bold py-3 rounded-lg shadow hover:bg-green-600 transition">
             Submit Registration

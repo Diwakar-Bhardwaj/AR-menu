@@ -1,13 +1,24 @@
 import QRCode from 'qrcode';
 
-export async function generateQrPngDataUrl(text) {
-  // Returns a data URL (PNG) that can be used directly in <img src="..." />
-  return QRCode.toDataURL(text, {
-    errorCorrectionLevel: 'M',
-    scale: 8,
-    margin: 2,
-    type: 'image/png'
-  });
+export class QRService {
+  static async generateQRCode(text, options = {}) {
+    const defaultOptions = {
+      errorCorrectionLevel: 'M',
+      scale: 8,
+      margin: 2,
+      type: 'image/png'
+    };
+
+    return await QRCode.toDataURL(text, { ...defaultOptions, ...options });
+  }
+
+  static async generateQRCodeBuffer(text, options = {}) {
+    const defaultOptions = {
+      errorCorrectionLevel: 'M',
+      scale: 8,
+      margin: 2
+    };
+
+    return await QRCode.toBuffer(text, { ...defaultOptions, ...options });
+  }
 }
-
-

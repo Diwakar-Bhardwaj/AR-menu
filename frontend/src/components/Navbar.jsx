@@ -38,6 +38,9 @@ const Navbar = () => {
           <button className="text-white font-medium hover:bg-orange-400 px-4 py-2 rounded-lg transition" onClick={() => navigate('/')}>
             Home
           </button>
+          <button className="text-white font-medium hover:bg-orange-400 px-4 py-2 rounded-lg transition" onClick={() => navigate('/restaurant/68bb45f2225945b6f3e58212')}>
+            Restaurant
+          </button>
           <button className="bg-white text-orange-500 font-semibold px-4 py-2 rounded-lg shadow hover:bg-orange-100 transition" onClick={() => navigate('/about')}>
             About
           </button>
@@ -52,6 +55,7 @@ const Navbar = () => {
             className="px-3 py-1 rounded-lg border-none focus:ring-2 focus:ring-orange-300 outline-none text-gray-700"
           />
           <button className="text-white font-medium hover:bg-orange-400 px-4 py-2 rounded-lg transition" onClick={() => { navigate('/'); setMenuOpen(false); }}>Home</button>
+          <button className="text-white font-medium hover:bg-orange-400 px-4 py-2 rounded-lg transition" onClick={() => { navigate('/restaurant/68bb45f2225945b6f3e58212'); setMenuOpen(false); }}>Restaurant</button>
           <button className="bg-white text-orange-500 font-semibold px-4 py-2 rounded-lg shadow hover:bg-orange-100 transition" onClick={() => { navigate('/about'); setMenuOpen(false); }}>About</button>
         </div>
       )}

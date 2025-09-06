@@ -1,10 +1,9 @@
-export function toSlug(input) {
-  return String(input)
-    .trim()
+export function toSlug(text) {
+  if (!text || typeof text !== 'string') return '';
+  return text
     .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-');
+    .trim()
+    .replace(/[^\w\s-]/g, '') // Remove special characters
+    .replace(/[\s_-]+/g, '-') // Replace spaces and underscores with hyphens
+    .replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
 }
-
-
